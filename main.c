@@ -6,21 +6,21 @@ int main()
 {
 
     srand (time(NULL));
-    int reponse , jouer ;        
-    int random = (rand() % 101),score = 0,max=10,rslt;
-        printf("si le nombre est identique vous avez gagner le jeux\n");
+    int reponse , jouer , rslt;        
+    int random = (rand() % 101),score = 0,max=10, compteur = 0;
+        printf("si le nombre est identique , vous avez gagner le jeux\n");
 
 
     while (score < 1)
 {
         random = (rand() % 101);
-  
 
         
     do
 {
-        printf("entrer nombre entre 0-100\n");
+        printf("%d ) entrer un nombre entre 0-100\n",compteur);
         scanf("%d",&reponse);
+       
 }   while (reponse<0 || reponse>100);
     
     
@@ -69,14 +69,15 @@ int main()
 
 
     if (random == reponse){
-        printf(", {OMG} , vous  avez gagner , le nombre identique\n");
+        printf("\nINCROYABLE !!! VOUS AVEZ GAGNE !\nVous avez trouve le nombre exact, ce qui est extremement rare.\nLa probabilite de gagner a ce jeu est seulement de 1 pour cent,\nce qui signifie que tres peu de joueurs reussissent cet exploit.\nFelicitations pour votre patience !\n");
+
         score ++;
-        printf("votre score est : %d \n",score);
     }       
     else if (random != reponse){
         printf(", alors est different\n");
         printf("recommencer une autre fois\n");
     }   
+        compteur ++;
 }
     
 
